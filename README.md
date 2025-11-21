@@ -2,7 +2,7 @@
 
 A tiny, dependency-free CLI tool to print RFC-compliant UUID version 4 and 7 values in several textual formats.
 
-The script is designed as a small, fast utility you can drop into your shell toolkit and use in scripts, pipelines, or ad‑hoc commands whenever you need fresh UUIDs.
+> The script is designed as a small, fast utility you can drop into your shell toolkit and use in scripts, pipelines, or ad‑hoc commands whenever you need fresh UUIDs.
 
 ---
 
