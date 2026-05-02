@@ -185,11 +185,11 @@ def unescape_separator(raw: str) -> str:
 
     Supported escape sequences
     --------------------------
-    - ``"\\n"`` → newline (LF)
-    - ``"\\r"`` → carriage return (CR)
-    - ``"\\t"`` → horizontal tab (TAB)
-    - ``"\\0"`` → NUL byte
-    - ``"\\\\"`` → a single backslash
+    - ``"\\n"`` -> newline (LF)
+    - ``"\\r"`` -> carriage return (CR)
+    - ``"\\t"`` -> horizontal tab (TAB)
+    - ``"\\0"`` -> NUL byte
+    - ``"\\\\"`` -> a single backslash
 
     Parameters
     ----------
