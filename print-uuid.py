@@ -125,6 +125,7 @@ def uuid7() -> uuid.UUID:
 
     # 62 random bits for rand_b across the last 8 bytes; set variant to 10xxxxxx
     tail_bytes: bytearray = bytearray(urandom(_UUID7_RAND_B_BYTES_LEN))
+
     tail_bytes[0] = (tail_bytes[0] & _UUID7_VARIANT_CLEAR_MASK) | _UUID7_VARIANT_SET_BITS
 
     raw: bytes = ts_bytes + ver_and_rand_a + tail_bytes
@@ -232,6 +233,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         prog="uuid",
         description="Print a UUID v4 (random) or v7 (time-ordered).",
     )
+
     parser.add_argument(
         "version",
         nargs="?",
@@ -279,10 +281,12 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     if args.count < 1:
         # Treat invalid count as a usage error with a deterministic exit code
         eprint("ERROR: --count must be >= 1")
+
         raise SystemExit(EXIT_USAGE)
 
     # Normalize version to "4" or "7" internally
     version_raw: str = args.version
+
     if version_raw in ("v4", "V4"):
         args.version = "4"
     elif version_raw in ("v7", "V7"):
